@@ -2,7 +2,7 @@
 
 Еще один слайдер. Создан для безболезненной интеграции в верстку. Имеет минимум стилей. Есть возможность подключить внешние элементы управления.
 
-Для использования подключить js файл и стили.
+Необходим jQuery. Для использования подключить js файл и стили.
 
 Пример инициализации:
 
@@ -27,7 +27,7 @@ wcHelper.noSelect('.right_arrow');
 
 Another slider. It was created for painless integration into layout. Has a minimum of styles. It is possible to connect external controls.
 
-To use, connect the js file and styles.
+Requires jQuery. To use, connect the js file and styles.
 
 Initialization example:
 
