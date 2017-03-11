@@ -57,8 +57,6 @@ function webcenter_slider(initParams) {
 		if (wcHelper.inArray(mode, modes)) {
 			this.params.mode = mode;
 		}
-		console.log(mode);
-		console.log(this.params.mode);
 	},
 	
 	this.left = function(selector) {
