@@ -8,8 +8,8 @@
 
 	var my_slider = new webcenter_slider({
 		selector: '.some_class',
-    		right: '.right_arrow', 
-    		left: '.left_arrow', 
+		right: '.right_arrow', 
+		left: '.left_arrow', 
 		mode: 'infinite', // есть еще standard
 		step: '290px', // шаг пролистывания в пикселях
 		width: '350px' // ширина слайдера
@@ -33,8 +33,8 @@ Initialization example:
 
 	var my_slider = new webcenter_slider({
 		selector: '.some_class',
-   		 right: '.right_arrow', 
-   		 left: '.left_arrow', 
+		right: '.right_arrow', 
+		left: '.left_arrow', 
 		mode: 'infinite', // есть еще standard
 		step: '290px', // шаг пролистывания в пикселях
 		width: '350px' // ширина слайдера
