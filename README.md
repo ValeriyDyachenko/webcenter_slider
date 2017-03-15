@@ -17,7 +17,8 @@
   
 Из неочевидного здесь параметр mode, который принимает infinite - бесконечный режим прокрутки или standard - остановиться в конце.
   
-Так же имеется небольшой помощник - объект wcHelper. 
+Так же имеется небольшой помощник - объект wcHelper.
+
 wcHelper.noSelect('.right_arrow'); 
 Теперь при кликах на данный элемент не будет происходить выделения элементов в браузере.
 
@@ -35,14 +36,15 @@ Initialization example:
 		selector: '.some_class',
 		right: '.right_arrow', 
 		left: '.left_arrow', 
-		mode: 'infinite', // есть еще standard
-		step: '290px', // шаг пролистывания в пикселях
-		width: '350px' // ширина слайдера
+		mode: 'infinite', 
+		step: '290px', 
+		width: '350px' 
 	});
   
   From the non-obvious here mode parameter, which takes infinite - infinite scrolling mode or standard - to stop at the end.
   
   
 There is also a small helper - the wcHelper object.
+
 WcHelper.noSelect ('. Right_arrow');
 Now when clicks on this element there will be no selection of items in the browser.
