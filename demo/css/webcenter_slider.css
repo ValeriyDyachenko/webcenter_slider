@@ -1,0 +1,10 @@
+.wc_slider_container {
+	white-space: nowrap;
+	position: relative;
+}
+
+.wc_slider_wrapper {
+    overflow-y: hidden;
+    display: inline-flex;
+	overflow-x: hidden;
+}
