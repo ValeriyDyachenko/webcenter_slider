@@ -11,14 +11,16 @@ function webcenter_slider(initParams) {
 		right: initParams.right,
 		left: initParams.left,
 		width: initParams.width || '330px',
-		auto_step: initParams.auto_step
+		auto_step: initParams.auto_step,
+		play: initParams.play
 	}
 	
 	this.states = {
 		infinite: false,
 		next_margin: 0,
 		auto_next_margins: [],
-		strategy: undefined
+		strategy: undefined,
+		player: undefined,
 	}
 	
 	this.model = {
@@ -53,6 +55,11 @@ function webcenter_slider(initParams) {
 					{
 						if (i + 1 < count_slides) {
 							margin_offcet += self.states.auto_next_margins[i];
+							
+						} else {
+							if (self.params.mode === 'infinite') {
+								margin_offcet = 0;
+							}
 						}
 					}
 					self.$s.animate({'margin-left': margin_offcet * -1 }, 'fast');	
@@ -62,9 +69,29 @@ function webcenter_slider(initParams) {
 					var margin = 0;
 					var current_position = self.model.strategy.fit.getPos();
 					var next_position = current_position - pass_slides;
-					for (var i = 1; i <= next_position; i++) 
-					{
-						margin = margin + self.states.auto_next_margins[i-1];
+					var count_slides = self.states.auto_next_margins.length;
+					
+					if (next_position >= 0) {
+						for (var i = 1; i <= next_position; i++) 
+						{
+							margin = margin + self.states.auto_next_margins[i-1];
+						}
+					} else {
+						if (self.params.mode === 'infinite') {
+							margin = 0;
+							next_position = count_slides - -next_position;
+							for (var i = 0; i < next_position; i++) 
+							{
+								if (i + 1 < count_slides) {
+									margin += self.states.auto_next_margins[i];
+								} else {
+									if (self.params.mode === 'infinite') {
+										margin_offcet = 0;
+									}
+								}
+							}
+							
+						}
 					}
 					self.$s.animate({'margin-left': margin * -1}, 'fast');	
 				},				
@@ -148,12 +175,12 @@ function webcenter_slider(initParams) {
 	}
 	
 	this.doRight = function() {
-		if (this.states.strategy === 'static') {
-			this.model.strategy.static.doRight();
+		if (self.states.strategy === 'static') {
+			self.model.strategy.static.doRight();
 		}
-		else if (this.states.strategy === 'fit') 
+		else if (self.states.strategy === 'fit') 
 		{
-			this.model.strategy.fit.doRight();
+			self.model.strategy.fit.doRight();
 		}		
 	}
 	
@@ -178,7 +205,7 @@ function webcenter_slider(initParams) {
 		});		
 	}
 	
-	this.getStrategy = function() {
+	this.setStrategy = function() {
 		if (this.params.auto_step) { 
 			this.states.strategy = 'fit';
 		} else {
@@ -200,10 +227,14 @@ function webcenter_slider(initParams) {
 		this.$s.wrap("<div class='wc_slider_wrapper'></div>");
 		this.wrapper.$w = this.$s.closest('.wc_slider_wrapper');
 		this.params.auto_step && this.model.strategy.fit.setAutoNextMarginVariable();
-		this.getStrategy();
+		this.setStrategy();
 		this.wrapper.$w.css('width', this.params.width);
 		this.params.right && this.right(this.params.right);
 		this.params.left && this.left(this.params.left);
+		
+		if (this.params.play) {
+			this.states.player = setInterval(self.doRight, this.params.play);
+		}
 	}
 	
 	this.init();
