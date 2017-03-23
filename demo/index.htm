@@ -11,11 +11,9 @@
 
 <body>
 
-<h1>WEBCENTER SLIDER</h1>
+<h1>WEBCENTER SLIDER DOC</h1>
 	
 <div class='content'>
-	
-	<img id='logo' src='img/logo.png'/>
 	
 	<h2>Static silde</h2>
 	
@@ -113,9 +111,39 @@ var my_slider3 = new webcenter_slider({
 	right: '.next3', 
 	left: '.prev3', 
 	auto_step: 1,
-	width: '785px' 
+	width: '785px',
+	mode: 'standard',
 });	
 	</pre>
+	
+	
+	
+	<h3>Play mode</h3>
+	
+	<div class='arr_wrap'><img src='img/left.png' class='noselect prev4 prev_button'/></div>
+
+	<span id='fourth'>
+		<div class='slide_big' style='background-image: url(img/s2.jpg);'></div>
+		<div class='slide_big' style='background-image: url(img/s1.jpg);'></div>
+		<div class='slide_big' style='background-image: url(img/s4.jpg);'></div>
+		<div class='slide_big' style='background-image: url(img/s3.jpg);'></div>
+		<div class='slide_big' style='background-image: url(img/s5.jpg);'></div>
+	</span>
+
+	<div class='arr_wrap'><img src='img/right.png' class='noselect next4 next_button'/></div>
+	
+	<pre>
+var my_slider4 = new webcenter_slider({
+	selector: '#fourth',
+	right: '.next4', 
+	left: '.prev4', 
+	auto_step: 1,
+	width: '400px',
+	play: 1200,
+	mode: 'infinite',
+});	
+	</pre>
+	
 	
 	
 </div>	
@@ -148,7 +176,18 @@ var my_slider3 = new webcenter_slider({
 			right: '.next3', 
 			left: '.prev3', 
 			auto_step: 1,
-			width: '785px' 
+			width: '785px',
+			mode: 'standard',
+		});	
+
+		var my_slider4 = new webcenter_slider({
+			selector: '#fourth',
+			right: '.next4', 
+			left: '.prev4', 
+			auto_step: 1,
+			width: '400px',
+			play: 1200,
+			mode: 'infinite',
 		});		
 		
 		wcHelper.noSelect('.noselect'); 
