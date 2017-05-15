@@ -1,0 +1,181 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>webcenter slider</title>
+  <meta name="description" content="webcenter slider">
+  <link rel="stylesheet" href="css/page.css">
+  <link rel="stylesheet" href="css/webcenter_slider.css">
+  <script src="js/jquery.js"></script>
+  <script src="js/wc_Slider.js"></script>
+</head>
+
+<body>
+
+<h1>WEBCENTER SLIDER DOC</h1>
+	
+<div class='content'>
+	
+	<h2>Static silde</h2>
+	
+	<h3>Infinite</h3>
+	
+	<div class='arr_wrap'><img src='img/left.png' class='noselect prev prev_button'/></div>
+
+	<span id='first'>
+		<div class='slide'>1</div>
+		<div class='slide'>2</div>
+		<div class='slide'>3</div>
+		<div class='slide'>4</div>
+		<div class='slide'>5</div>
+		<div class='slide'>6</div>
+		<div class='slide'>7</div>
+		<div class='slide'>8</div>
+		<div class='slide'>9</div>
+		<div class='slide'>10</div>
+	</span>
+
+	<div class='arr_wrap'><img src='img/right.png' class='noselect next next_button'/></div>
+	
+	<pre>
+var my_slider1 = new wc_slider({
+	selector: '#first',
+	right: '.next', 
+	left: '.prev', 
+	mode: 'infinite', 
+	step: '80px', 
+	width: '785px' 
+});
+	</pre>
+
+	<h3>Standard</h3>
+	
+	<div class='arr_wrap'><img src='img/left.png' class='noselect prev2 prev_button'/></div>
+	
+	<span id='second'>
+		<div class='slide'>1</div>
+		<div class='slide'>2</div>
+		<div class='slide'>3</div>
+		<div class='slide'>4</div>
+		<div class='slide'>5</div>
+		<div class='slide'>6</div>
+		<div class='slide'>7</div>
+		<div class='slide'>8</div>
+		<div class='slide'>9</div>
+		<div class='slide'>10</div>
+	</span>
+
+	<div class='arr_wrap'><img src='img/right.png' class='noselect next2 next_button'/></div>
+	
+	<pre>
+var my_slider2 = new webcenter_slider({
+	selector: '#second',
+	right: '.next2', 
+	left: '.prev2', 
+	mode: 'standard', 
+	step: '80px', 
+	width: '785px' 
+});
+	</pre>
+
+	
+	
+	
+	<h2>Element slide</h2>
+
+	<h3>Slide every 1 element</h3>
+	
+	<div class='arr_wrap'><img src='img/left.png' class='noselect prev3 prev_button'/></div>
+
+	<span id='third'>
+		<div style='width:60px; color:#fff; height:100px; background-color:#2196f3; display: inline-block;'>1</div>
+		<div style='width:110px; color:#fff; height:100px; background-color:#2196f3; display: inline-block;'>2</div>
+		<div style='width:200px; color:#fff; height:100px; background-color:#2196f3; display: inline-block;'>3</div>
+		<div style='width:90px; color:#fff; height:100px; background-color:#2196f3; display: inline-block;'>4</div>
+		<div style='width:14px; color:#fff; height:100px; background-color:#2196f3; display: inline-block;'>5</div>
+		<div style='width:70px; color:#fff; height:100px; background-color:#2196f3; display: inline-block;'>6</div>
+		<div style='width:130px; color:#fff; height:100px; background-color:#2196f3; display: inline-block;'>7</div>
+		<div style='width:60px; color:#fff; height:100px; background-color:#2196f3; display: inline-block;'>8</div>
+		<div style='width:110px; color:#fff; height:100px; background-color:#2196f3; display: inline-block;'>9</div>
+		<div style='width:200px; color:#fff; height:100px; background-color:#2196f3; display: inline-block;'>10</div>
+		<div style='width:90px; color:#fff; height:100px; background-color:#2196f3; display: inline-block;'>11</div>
+		<div style='width:14px; color:#fff; height:100px; background-color:#2196f3; display: inline-block;'>12</div>
+		<div style='width:70px; color:#fff; height:100px; background-color:#2196f3; display: inline-block;'>13</div>
+		<div style='width:130px; color:#fff; height:100px; background-color:#2196f3; display: inline-block;'>14</div>		
+	</span>
+
+	<div class='arr_wrap'><img src='img/right.png' class='noselect next3 next_button'/></div>
+	
+	<pre>
+var my_slider3 = new webcenter_slider({
+	selector: '#third',
+	right: '.next3', 
+	left: '.prev3', 
+	auto_step: 1,
+	width: '785px',
+	mode: 'standard',
+});	
+	</pre>
+	
+	
+	
+	<h3>Play mode</h3>
+	
+	<div class='arr_wrap'><img src='img/left.png' class='noselect prev4 prev_button'/></div>
+
+	<span id='fourth'>
+		<div class='slide_big' style='background-image: url(img/s2.jpg);'></div>
+		<div class='slide_big' style='background-image: url(img/s1.jpg);'></div>
+		<div class='slide_big' style='background-image: url(img/s4.jpg);'></div>
+		<div class='slide_big' style='background-image: url(img/s3.jpg);'></div>
+		<div class='slide_big' style='background-image: url(img/s5.jpg);'></div>
+	</span>
+
+	<div class='arr_wrap'><img src='img/right.png' class='noselect next4 next_button'/></div>
+	
+	<pre>
+var my_slider4 = new webcenter_slider({
+	selector: '#fourth',
+	right: '.next4', 
+	left: '.prev4', 
+	auto_step: 1,
+	width: '400px',
+	play: 1200,
+	mode: 'infinite',
+});	
+	</pre>
+	
+	
+	
+</div>	
+	
+
+	
+	<script>
+	
+		var my_slider1 = new wc_Slider({
+			selector: '#first',
+			right: '.next', 
+			left: '.prev', 
+			mode: 'infinite', 
+			step: '80px', 
+			width: '785px' 
+		});
+		
+		var my_slider2 = new wc_Slider({
+			selector: '#second',
+			right: '.next2', 
+			left: '.prev2', 
+			mode: 'standard', 
+			step: '80px', 
+			width: '785px' 
+		});
+
+		noSelect('.noselect');
+
+	</script>
+
+</body>
+
+</html>
